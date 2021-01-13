@@ -10,8 +10,9 @@ const CarsPage = ()=>{
     const {
         wpcontent:{
        page:{
-           carsPMeta:{carsPageDescription,
-            carsPageHeaderPictcure},
+           carsPMeta:{
+             carsPageDescription,
+            carsPageHeaderPicture},
        },
        cars:{edges: cars}    
         }
@@ -20,7 +21,7 @@ const CarsPage = ()=>{
         wpcontent {
             page(id: "cars", idType: URI) {
               carsPMeta {
-                carsPageHeaderPictcure {
+                carsPageHeaderPicture {
                     sourceUrl
                     imageFile{
                         childImageSharp{
@@ -57,7 +58,7 @@ const CarsPage = ()=>{
             <SEO title="Cars" />
             <Wrapper carsColor={COLORS.BLACK} descriptionColor={COLORS.SECONDARY}>
                 <div className="banner">
-                   <Image fluid={carsPageHeaderPictcure.imageFile.childImageSharp.fluid}/>
+                   <Image fluid={carsPageHeaderPicture.imageFile.childImageSharp.fluid}/>
                    <BottomEdgeDown color={COLORS.BLACK}/>
                 </div>
             </Wrapper>
