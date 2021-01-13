@@ -18,7 +18,7 @@ const CarsPage = () => {
       page: {
         carsPMeta: { carsPageDescription, carsPageHeaderPicture },
       },
-      cars: { edges: cars },
+      cars: { edges: carsData },
     },
   } = useStaticQuery(graphql`
     query {
@@ -49,16 +49,17 @@ const CarsPage = () => {
                 make
                 model
                 year
-                pictures {
+                profile{
                   altText
-                  imageFile {
-                    childImageSharp {
+                  slug
+                  sourceUrl
+                  imageFile{
+                    childImageSharp{
                       fluid(quality: 100, grayscale: true) {
                         ...GatsbyImageSharpFluid_withWebp
                       }
                     }
                   }
-                  slug
                 }
               }
             }
@@ -67,7 +68,7 @@ const CarsPage = () => {
       }
     }
   `)
-  console.log(cars)
+  console.log(carsData)
   return (
     <Layout>
       <SEO title="Cars" />
@@ -85,8 +86,13 @@ const CarsPage = () => {
         <div className="cars">
           <h2>Our Cars</h2>
           <div className="car-items">
-            {cars.map(({ node: { carsMeta, slug } }) => (
-              <Cars to={`/${slug}`} key={slug}>
+            {carsData.map(({ node: { carsMeta, slug, i } }) => (
+              <Cars to={`/${slug}`} key={i}>
+                                <Image
+                  fluid={carsMeta.profile.imageFile.childImageSharp.fluid}
+                  altText={carsMeta.make}
+                />
+
                 <div className="car-info">
                   <p>
                     {carsMeta.make} {carsMeta.model}

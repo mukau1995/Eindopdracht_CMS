@@ -51,7 +51,7 @@ const IndexPage = () => {
                   make
                   model
                   year
-                  pictures {
+                  profile {
                     altText
                     sourceUrl
                     imageFile {
@@ -95,8 +95,8 @@ const IndexPage = () => {
             {homePageFeaturedCars.map(({ carsMeta, slug }) => (
               <Cars to={`${slug}`}>
                 <Image
-                  fluid={carsMeta.pictures.imageFile.childImageSharp.fluid}
-                  altText={carsMeta.make, carsMeta.model}
+                  fluid={carsMeta.profile.imageFile.childImageSharp.fluid}
+                  altText={carsMeta.make}
                 />
                 <div className="car-info">
                   <p>
