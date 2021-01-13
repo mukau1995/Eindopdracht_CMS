@@ -68,7 +68,6 @@ const CarsPage = () => {
       }
     }
   `)
-  console.log(carsData)
   return (
     <Layout>
       <SEO title="Cars" />

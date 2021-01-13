@@ -21,7 +21,7 @@ exports.createPages = ({ graphql, actions }) => {
       return Promise.reject(result.errors)
     }
 
-    const cars = result.data.wpcontent.cars.edges
+    const cars = result.data.wpcontent.types.edges
     cars.forEach(car => {
       const { id, slug } = car.node
       createPage({
