@@ -33,7 +33,7 @@ const Header = ({ siteTitle }) => {
   return (
     <HeaderWrapper>
       <Link to="/">
-      <Image alt="logo elie cars" fixed={logo.childImageSharp.fixed} />
+        <Image alt="logo elie cars" fixed={logo.childImageSharp.fixed} />
       </Link>
       <Menu menuItems={menuItems.edges} />
     </HeaderWrapper>
