@@ -8,12 +8,13 @@ const CarsTemplate = ({
   data: {
     wpcontent: {
       carsMeta,
-      car: {
+      cars: {
         type: { edges: types },
       },
     },
   }
 }) => {
+  console.log(types)
     return (
     <Layout>
       <SEO title="Cars" />

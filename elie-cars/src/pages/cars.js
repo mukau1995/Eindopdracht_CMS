@@ -49,12 +49,11 @@ const CarsPage = () => {
                 make
                 model
                 year
-                profile{
+                profile {
                   altText
-                  slug
                   sourceUrl
-                  imageFile{
-                    childImageSharp{
+                  imageFile {
+                    childImageSharp {
                       fluid(quality: 100, grayscale: true) {
                         ...GatsbyImageSharpFluid_withWebp
                       }
@@ -62,6 +61,7 @@ const CarsPage = () => {
                   }
                 }
               }
+              slug
             }
           }
         }
@@ -87,7 +87,7 @@ const CarsPage = () => {
           <div className="car-items">
             {carsData.map(({ node: { carsMeta, slug, i } }) => (
               <Cars to={`/${slug}`} key={i}>
-                                <Image
+                <Image
                   fluid={carsMeta.profile.imageFile.childImageSharp.fluid}
                   altText={carsMeta.make}
                 />

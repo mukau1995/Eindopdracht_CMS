@@ -1,11 +1,13 @@
 const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
 const path = require("path")
+const { graphql } = require("gatsby")
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return graphql(`
     {
       wpcontent {
-        cars {
+        car {
           edges {
             node {
               slug
@@ -21,7 +23,7 @@ exports.createPages = ({ graphql, actions }) => {
       return Promise.reject(result.errors)
     }
 
-    const cars = result.data.wpcontent.types.edges
+    const cars = result.data.wpcontent.cars.edges.node.car
     cars.forEach(car => {
       const { id, slug } = car.node
       createPage({
