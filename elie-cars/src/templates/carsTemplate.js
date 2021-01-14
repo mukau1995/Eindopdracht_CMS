@@ -14,12 +14,28 @@ const CarsTemplate = ({
     },
   }
 }) => {
-  console.log(types)
+  const { picture1, picture2, picture3 } = carsMeta.pictures
+  const pictures = [picture1, picture2, picture3]
+
     return (
     <Layout>
       <SEO title="Cars" />
       <Wrapper>
-        <div>Hallo</div>
+        <div className="cars-container">
+          <div className="car-image">
+          <Image
+              fluid={carsMeta.profile.imageFile.childImageSharp.fluid}
+              alt={carsMeta.profile.altText}
+            />
+            <div className="types">
+              {types.map(({node: type})=>(
+                <div key={type.title} className="type">
+                  {type.title}
+                </div>
+              ))}
+              </div>      
+            </div>
+        </div>
       </Wrapper>
     </Layout>
   )
@@ -93,7 +109,7 @@ export const pageQuery = graphql`
                   }
                 }
               }
-              id
+              slug
             }
           }
         }
