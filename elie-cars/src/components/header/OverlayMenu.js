@@ -38,7 +38,7 @@ const OverlayMenu=({handlerOverlayMenu, menuOpen})=>{
                 <Image alt="logo elie cars" fixed={logo.childImageSharp.fixed}/>
                 </Link>
                 <MenuList style={{flexDirection: "column"}}>
-                    {menuItems.map(({node: item}, i) =>(
+                    {menuItems.edges.map(({node: item}, i) =>(
                         <li key={i}>
                             <Link activeClassName="nav-active" to={item.path}>
                                 {item.label}

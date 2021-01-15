@@ -1,15 +1,15 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
-import Layout from "../components/Layout"
-import SEO from "../components/Seo"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 import {
   Wrapper,
   Image,
   Cars,
   BottomEdgeDown,
   BottomEdgeUp,
-} from "./pageStyles/pageStyles"
+} from "../pageStyles/pageStyles"
 import { COLORS } from "../constants"
 
 const IndexPage = () => {
@@ -56,15 +56,15 @@ const IndexPage = () => {
                     sourceUrl
                     imageFile {
                       childImageSharp {
-                        fluid(quality: 100, grayscale: true) {
+                        fluid(quality: 50, grayscale: true) {
                           ...GatsbyImageSharpFluid_withWebp
                         }
                       }
                     }
                   }
                 }
-              }
-            }
+              } 
+            }     
           }
         }
       }

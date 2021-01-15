@@ -1,40 +1,40 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/Layout"
-import SEO from "../components/Seo"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 import { Wrapper, Image } from "./templateStyles/carsTemplateStyles"
 
 const CarsTemplate = ({
   data: {
     wpcontent: {
-      carsMeta,
-      cars: {
-        type: { edges: types },
+      car: {
+        carsMeta,
+        types: { edges: types },
       },
     },
-  }
+  },
 }) => {
   const { picture1, picture2, picture3 } = carsMeta.pictures
   const pictures = [picture1, picture2, picture3]
 
-    return (
+  return (
     <Layout>
       <SEO title="Cars" />
       <Wrapper>
         <div className="cars-container">
           <div className="car-image">
-          <Image
-              fluid={carsMeta.profile.imageFile.childImageSharp.fluid}
-              alt={carsMeta.profile.altText}
+            <Image
+              fluid={carsMeta.pictures.picture1.imageFile.childImageSharp.fluid}
+              alt={carsMeta.pictures.picture1.altText}
             />
             <div className="types">
-              {types.map(({node: type})=>(
+              {types.map(({ node: type }) => (
                 <div key={type.title} className="type">
                   {type.title}
                 </div>
               ))}
-              </div>      
             </div>
+          </div>
         </div>
       </Wrapper>
     </Layout>
@@ -45,71 +45,53 @@ export default CarsTemplate
 export const pageQuery = graphql`
   query($id: ID!) {
     wpcontent {
-      type(id: $id, idType: ID) {
-        cars {
+      car(id: $id, idType: ID) {
+        types {
           edges {
             node {
-              title
+              name
             }
           }
         }
-        cars {
-          edges {
-            node {
-              carsMeta {
-                color
-                hp
-                make
-                model
-                year
-                profile {
-                  sourceUrl
-                  imageFile {
-                    childImageSharp {
-                      fluid(quality: 75) {
-                        ...GatsbyImageSharpFluid_withWebp
-                      }
-                    }
-                  }
-                  altText
-                }
-                pictures {
-                  picture3 {
-                    sourceUrl
-                    imageFile {
-                      childImageSharp {
-                        fluid(quality: 75) {
-                          ...GatsbyImageSharpFluid_withWebp
-                        }
-                      }
-                    }
-                    altText
-                  }
-                  picture2 {
-                    sourceUrl
-                    imageFile {
-                      childImageSharp {
-                        fluid(quality: 75) {
-                          ...GatsbyImageSharpFluid_withWebp
-                        }
-                      }
-                    }
-                    altText
-                  }
-                  picture1 {
-                    sourceUrl
-                    imageFile {
-                      childImageSharp {
-                        fluid(quality: 75) {
-                          ...GatsbyImageSharpFluid_withWebp
-                        }
-                      }
-                    }
-                    altText
+        carsMeta {
+          color
+          hp
+          make
+          model
+          year
+          pictures {
+            picture1 {
+              altText
+              sourceUrl
+              imageFile {
+                childImageSharp {
+                  fluid(quality: 50) {
+                    ...GatsbyImageSharpFluid_withWebp
                   }
                 }
               }
-              slug
+            }
+            picture2 {
+              altText
+              sourceUrl
+              imageFile {
+                childImageSharp {
+                  fluid(quality: 50) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
+            }
+            picture3 {
+              altText
+              sourceUrl
+              imageFile {
+                childImageSharp {
+                  fluid(quality: 50) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
             }
           }
         }

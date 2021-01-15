@@ -9,7 +9,7 @@ import {
   Cars,
   BottomEdgeDown,
   BottomEdgeUp,
-} from "./pageStyles/pageStyles"
+} from "../pageStyles/pageStyles"
 import { COLORS } from "../constants"
 
 const CarsPage = () => {
@@ -54,7 +54,7 @@ const CarsPage = () => {
                   sourceUrl
                   imageFile {
                     childImageSharp {
-                      fluid(quality: 100, grayscale: true) {
+                      fluid(quality: 50, grayscale: true) {
                         ...GatsbyImageSharpFluid_withWebp
                       }
                     }

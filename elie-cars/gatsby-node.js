@@ -7,7 +7,7 @@ exports.createPages = ({ graphql, actions }) => {
   return graphql(`
     {
       wpcontent {
-        car {
+        cars {
           edges {
             node {
               slug
@@ -23,12 +23,12 @@ exports.createPages = ({ graphql, actions }) => {
       return Promise.reject(result.errors)
     }
 
-    const cars = result.data.wpcontent.types.edges
+    const cars = result.data.wpcontent.cars.edges
     cars.forEach(car => {
       const { id, slug } = car.node
       createPage({
         path: slug,
-        component: path.resolve(`./src/templates/carsTemplate.js`),
+        component: path.resolve(`src/templates/carsTemplate.js`),
         context: {
           id,
           slug,

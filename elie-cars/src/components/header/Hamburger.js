@@ -12,7 +12,7 @@ const Hamburger = ({handlerOverlayMenu})=>{
     )
 }
 
-Hamburger.PropTypes={
+Hamburger.propTypes={
     handlerOverlayMenu: PropTypes.func,
 
 }
