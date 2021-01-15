@@ -29,8 +29,8 @@ const CarsTemplate = ({
             />
             <div className="types">
               {types.map(({ node: type }) => (
-                <div key={type.title} className="type">
-                  {type.title}
+                <div key={type.name} className="type">
+                  {type.name}
                 </div>
               ))}
             </div>
