@@ -1,10 +1,10 @@
 export const COLORS = {
-  PRIMARY: "#794c74",
-  SECONDARY: "#c56183",
-  TERTIARY: "#fadcaa",
-  WHITE: "#FFF",
-  BLACK: "#181819",
-  GREY: "#242124",
+  PRIMARY: "#B28228",
+  SECONDARY: "#FFB606",
+  TERTIARY: "#FFE002",
+  WHITE: "#FBFCD4",
+  BLACK: "#0A0A0A",
+  GREY: "#151515",
 }
 
 export const FONT_FAMILIES = {

@@ -71,12 +71,12 @@ const CarsPage = () => {
   return (
     <Layout>
       <SEO title="Cars" />
-      <Wrapper carsColor={COLORS.BLACK} descriptionColor={COLORS.SECONDARY}>
+      <Wrapper carsColor={COLORS.BLACK} descriptionColor={COLORS.GREY}>
         <div className="banner">
           <Image
             fluid={carsPageHeaderPicture.imageFile.childImageSharp.fluid}
           />
-          <BottomEdgeDown color={COLORS.SECONDARY} />
+          <BottomEdgeDown color={COLORS.PRIMARY} />
         </div>
         <div className="description">
           <p>{carsPageDescription}</p>

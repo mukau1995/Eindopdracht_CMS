@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import {Link, useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -44,7 +44,7 @@ const IndexPage = () => {
             }
             homePageFeaturedCars {
               ... on WPGraphql_Car {
-                id
+                slug
                 carsMeta {
                   color
                   hp
@@ -83,11 +83,11 @@ const IndexPage = () => {
             <p className="header-title">{homePageHeaderTitle}</p>
             <p className="header-description">{homePageHeaderDescription}</p>
           </div>
-          <BottomEdgeDown color={COLORS.BLACK} />
+          <BottomEdgeDown color={COLORS.WHITE} />
         </div>
         <div className="description">
           <p>{homePageHeaderDescription}</p>
-          <BottomEdgeUp color={COLORS.PRIMARY} />
+          <BottomEdgeUp color={COLORS.WHITE} />
         </div>
         <div className="cars">
           <h2>Featured Cars</h2>

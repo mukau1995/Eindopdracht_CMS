@@ -83,7 +83,7 @@ export const Wrapper = styled.div`
     p {
       width: 70%;
       font-size: 1.3rem;
-      color: ${COLORS.TERTIARY};
+      color: ${COLORS.WHITE};
       text-align: center;
       line-height: 2rem;
       margin: auto;
@@ -91,37 +91,6 @@ export const Wrapper = styled.div`
       @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
         width: 90%;
         font-size: 1rem;
-      }
-    }
-  }
-
-  .contact-info {
-    display: flex;
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-align: center;
-    margin-top: 2rem;
-
-    @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
-      flex-direction: column;
-    }
-
-    div {
-      width: 33.33%;
-      padding: 1em;
-      color: ${COLORS.TERTIARY};
-
-      @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
-        width: 100%;
-      }
-
-      p {
-        margin-top: 1rem;
-        color: white;
-
-        a {
-          color: ${COLORS.SECONDARY};
-        }
       }
     }
   }
