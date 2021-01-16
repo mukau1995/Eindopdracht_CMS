@@ -1,5 +1,5 @@
 import React from "react"
-import {Link, useStaticQuery, graphql } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -63,8 +63,8 @@ const IndexPage = () => {
                     }
                   }
                 }
-              } 
-            }     
+              }
+            }
           }
         }
       }
@@ -83,17 +83,16 @@ const IndexPage = () => {
             <p className="header-title">{homePageHeaderTitle}</p>
             <p className="header-description">{homePageHeaderDescription}</p>
           </div>
-          <BottomEdgeDown color={COLORS.WHITE} />
         </div>
         <div className="description">
           <p>{homePageHeaderDescription}</p>
-          <BottomEdgeUp color={COLORS.WHITE} />
         </div>
         <div className="cars">
           <h2>Featured Cars</h2>
           <div className="car-items">
             {homePageFeaturedCars.map(({ carsMeta, slug }) => (
               <Cars to={`${slug}`}>
+                <BottomEdgeUp color={COLORS.WHITE} />
                 <Image
                   fluid={carsMeta.profile.imageFile.childImageSharp.fluid}
                   altText={carsMeta.make}

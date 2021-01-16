@@ -6,7 +6,6 @@ import Header from "./header/Header"
 import HamburgerButton from './header/Hamburger'
 import OverlayMenu from './header/OverlayMenu'
 import "./layout.css"
-import { COLORS } from "../constants"
 
 const Layout = ({ children }) => {
   const [menuOpen, setMenuOpen]=useState(false);

@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
     display: flex;
     margin: 3rem auto;
     width: 90%;
-    background-color: ${COLORS.TERTIARY};
+    background-color: ${COLORS.BLACK};
 
     @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
       flex-direction: column;
@@ -63,7 +63,7 @@ export const Wrapper = styled.div`
         font-family: ${FONT_FAMILIES.TITLE};
         text-transform: uppercase;
         font-size: 4rem;
-        border-bottom: ${COLORS.WHITE} solid 6px;
+        border-bottom: ${COLORS.PRIMARY} solid 6px;
         padding-bottom: 1rem;
         margin-left: auto;
         margin-bottom: 0.5rem;
@@ -112,8 +112,7 @@ export const Wrapper = styled.div`
   }
 
   .car-pictures {
-    display: flex;
-    width: 100%;
+    display: block;
     justify-content: center;
     margin-top: 2rem;
 
@@ -122,15 +121,15 @@ export const Wrapper = styled.div`
     }
 
     .car-picture {
-      width: 28.5vw;
-      height: 57vw;
+      width: 100%;
+      height: 100%;
       margin: 0 1vw;
 
       @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
-        width: 90vw;
-        height: 160vw;
-        margin: 2vw auto;
-      }
+        width: 100%;
+        height: 100%;
+        margin: 0 1vw;
+        }
     }
   }
 `

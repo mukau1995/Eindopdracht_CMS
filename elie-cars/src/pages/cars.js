@@ -76,7 +76,6 @@ const CarsPage = () => {
           <Image
             fluid={carsPageHeaderPicture.imageFile.childImageSharp.fluid}
           />
-          <BottomEdgeDown color={COLORS.PRIMARY} />
         </div>
         <div className="description">
           <p>{carsPageDescription}</p>
@@ -87,6 +86,7 @@ const CarsPage = () => {
           <div className="car-items">
             {carsData.map(({ node: { carsMeta, slug, i } }) => (
               <Cars to={`/${slug}`} key={i}>
+                          <BottomEdgeDown color={COLORS.GREY} />
                 <Image
                   fluid={carsMeta.profile.imageFile.childImageSharp.fluid}
                   altText={carsMeta.make}

@@ -14,20 +14,43 @@ const CarsTemplate = ({
     },
   },
 }) => {
+  const { picture1, picture2, picture3 } = carsMeta.pictures
+  const pictures = [picture1, picture2, picture3]
+
   return (
     <Layout>
       <SEO title="Cars" />
       <Wrapper>
         <div className="cars-container">
-        <div className="car-info">
-          <h2>{carsMeta.make} {carsMeta.model}</h2>
-        <i><strong>Name: </strong>{carsMeta.make}</i>
-        <i><strong>Model: </strong>{carsMeta.make}</i>
-        <i><strong>Color: </strong>{carsMeta.color}</i>
-        <i><strong>Horse Power: </strong>{carsMeta.hp}</i>
-        <i><strong>Year: </strong>{carsMeta.year}</i>
-        <p><strong>Description: </strong>{carsMeta.carDescription}</p>
-        </div>
+          <div className="car-info">
+            <h2>
+              {carsMeta.make} {carsMeta.model}
+            </h2>
+            <i>
+              <strong>Name: </strong>
+              {carsMeta.make}
+            </i>
+            <i>
+              <strong>Model: </strong>
+              {carsMeta.make}
+            </i>
+            <i>
+              <strong>Color: </strong>
+              {carsMeta.color}
+            </i>
+            <i>
+              <strong>Horse Power: </strong>
+              {carsMeta.hp}
+            </i>
+            <i>
+              <strong>Year: </strong>
+              {carsMeta.year}
+            </i>
+            <p>
+              <strong>Description: </strong>
+              {carsMeta.carDescription}
+            </p>
+          </div>
           <div className="car-image">
             <Image
               fluid={carsMeta.pictures.picture1.imageFile.childImageSharp.fluid}
@@ -40,6 +63,26 @@ const CarsTemplate = ({
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+        <div className="car-pictures">
+          <div className="car-picture">
+            <Image
+              fluid={carsMeta.pictures.picture1.imageFile.childImageSharp.fluid}
+              alt={carsMeta.pictures.picture1.altText}
+            />
+          </div>
+          <div className="car-picture">
+            <Image
+              fluid={carsMeta.pictures.picture2.imageFile.childImageSharp.fluid}
+              alt={carsMeta.pictures.picture1.altText}
+            />
+          </div>
+          <div className="car-picture">
+            <Image
+              fluid={carsMeta.pictures.picture3.imageFile.childImageSharp.fluid}
+              alt={carsMeta.pictures.picture1.altText}
+            />
           </div>
         </div>
       </Wrapper>
